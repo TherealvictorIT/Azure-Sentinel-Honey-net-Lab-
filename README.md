@@ -1,6 +1,6 @@
-# Azure-Sentinel-Honey-net-Lab-
-# Building a SOC + Honeynet in Azure (Live Traffic)
-![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
+# Azure Sentinel Honeynet Lab (Live Traffic)
+![Cloud Honeynet / SOC](![Azure Honeynet Slide](https://github.com/TherealvictorIT/Azure-Sentinel-Honey-net-Lab-/assets/125538763/33ad4cc3-33c9-415d-af6f-e9ebd4b1df51)
+)
 
 ## Introduction
 
