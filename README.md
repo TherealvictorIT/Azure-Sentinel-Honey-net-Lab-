@@ -5,11 +5,11 @@
 
 The primary objective of this lab is to intentionally expose our environment to potential threats, allowing us to observe and analyze the behavior of bad actors on the internet. I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
 
-SecurityEvent (Windows Event Logs)
-Syslog (Linux Event Logs)
-SecurityAlert (Log Analytics Alerts Triggered)
-SecurityIncident (Incidents created by Sentinel)
-AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
+-SecurityEvent (Windows Event Logs)
+-Syslog (Linux Event Logs)
+-SecurityAlert (Log Analytics Alerts Triggered)
+-SecurityIncident (Incidents created by Sentinel)
+-AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
 
 ## Architecture Before Hardening / Security Controls
