@@ -5,11 +5,11 @@
 
 The primary objective of this lab is to intentionally expose our environment to potential threats, allowing us to observe and analyze the behavior of bad actors on the internet. I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
 
--SecurityEvent (Windows Event Logs)
--Syslog (Linux Event Logs)
--SecurityAlert (Log Analytics Alerts Triggered)
--SecurityIncident (Incidents created by Sentinel)
--AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
+-SecurityEvent (Windows Event Logs)  
+-Syslog (Linux Event Logs)  
+-SecurityAlert (Log Analytics Alerts Triggered)  
+-SecurityIncident (Incidents created by Sentinel)  
+-AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)  
 
 
 ## Architecture Before Hardening / Security Controls
@@ -19,7 +19,7 @@ The primary objective of this lab is to intentionally expose our environment to 
 ## Architecture After Hardening / Security Controls
 ![Architecture Diagram](https://github.com/TherealvictorIT/Azure-Sentinel-Honey-net-Lab-/assets/125538763/97899627-2aed-4629-84ab-03ea88a1def0">)
 
-The architecture of the mini honeynet in Azure consists of the following components:
+The structure of the honeynet in Azure comprises the following components:
 
 - Virtual Network (VNet)
 - Network Security Group (NSG)
@@ -29,14 +29,17 @@ The architecture of the mini honeynet in Azure consists of the following compone
 - Azure Storage Account
 - Microsoft Sentinel
 
-For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
+For the “Before” metrics, all resources were deployed with exposure to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources were deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.  
 
-For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
+For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of an admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint  
+
 
 ## Attack Maps Before Hardening / Security Controls
-![NSG Allowed Inbound Malicious Flows](https://i.imgur.com/1qvswSX.png)<br>
-![Linux Syslog Auth Failures](https://i.imgur.com/G1YgZt6.png)<br>
-![Windows RDP/SMB Auth Failures](https://i.imgur.com/ESr9Dlv.png)<br>
+![NSG Allowed Inbound Malicious Flows](https://github.com/TherealvictorIT/Azure-Sentinel-Honey-net-Lab-/assets/125538763/c58454a2-5887-43c7-9e92-f6fb0f012f03)<br>
+![Linux Syslog Auth Failures](https://github.com/TherealvictorIT/Azure-Sentinel-Honey-net-Lab-/assets/125538763/3594d3bd-9b1c-4796-8572-b9854a04ecfb)<br>
+![Windows RDP/SMB Auth Failures](https://github.com/TherealvictorIT/Azure-Sentinel-Honey-net-Lab-/assets/125538763/0187de7a-0249-411c-ba4c-ac235f168848)<br>
+![MSSQL Auth Faiures](https://github.com/TherealvictorIT/Azure-Sentinel-Honey-net-Lab-/assets/125538763/1420d52c-54d1-4d20-beac-14bc3c0f3957)<br> 
+
 
 ## Metrics Before Hardening / Security Controls
 
